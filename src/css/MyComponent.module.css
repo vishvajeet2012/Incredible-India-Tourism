@@ -1,0 +1,148 @@
+/* MyComponent.module.css */
+.heading {
+    font-family: 'Times New Roman', serif;
+  font-size: 2em;
+  color: hsl(0, 0%, 0%);
+  font-style:normal;
+  margin: 20px 0;
+  line-height: 1.3;
+  padding:5px 0px 0px 15px;
+    margin: 0px;
+
+  }
+
+  .sub{
+margin-left: 10px;
+color: black;
+font-style: normal;
+padding:13px 0px 0px 15px;
+margin: 0px;
+  }
+  
+.fex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+
+}
+
+.mobileee{
+    width: 250px;
+    height: 477px;
+    object-fit: contain;
+      
+    
+
+}
+.boxmobile{
+    margin: -88px 0px 0px 0px;
+    padding:  0px 0px 0px 30px;
+
+
+ 
+}
+
+
+.slideImg{
+  padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+
+.cardFlex{
+  display: flex;
+  justify-content: center;
+flex-wrap: wrap;
+}
+
+.cardsliderText{
+  text-align: center;
+  font-size: larger;
+  font-weight: 700;
+line-height: normal;
+font-family:Arial, Helvetica, sans-serif;
+margin: 3px;
+
+}
+
+.cardSliderDes{
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+opacity: 0.8;
+color:gray;
+}
+
+.headingg{
+  text-align: center;
+}
+.wind{
+  width:80% !important;
+  background-color:white;
+  margin: 0px;
+  padding: 0px;
+}
+.viewall{   /*   View all attraction */
+
+margin: 15px 0px;
+  padding: 15px 40px;
+  background: transparent;
+  outline: none;
+  font-size: 20px;
+  border: 1px solid #1976d2;
+  border-radius: 10px; &:hover {
+  
+    background-color: royalblue;
+  color: white; &:active{
+    border: 1px solid black;
+    background-color: rgb(29, 27, 27)
+  }
+
+  };
+
+}
+
+
+@media (max-width: 900px) {
+  .mobileee {
+    margin-top: 150px;
+      width: 400px;
+      height: 400px;
+    display: none; }
+
+
+      .heading {
+        font-family: 'Times New Roman', serif;
+      font-size: 1.5em;
+      color: hsl(0, 0%, 0%);
+      font-style:normal;
+      margin: 20px 0;
+      line-height: 1.3;
+      padding:5px 0px 0px 15px;
+        margin: 0px;
+    
+      }
+    
+      .sub{
+    margin-left: 10px;
+    color: black;
+ font-size: 1em;
+    font-style: normal;
+    padding:13px 0px 0px 15px;
+    margin: 0px;
+      }
+
+   
+.flexinfo{
+ display: flex;
+  flex-wrap:nowrap;
+  font-size: medium;
+  flex-direction: column;
+
+}
+      
+
+
+    }

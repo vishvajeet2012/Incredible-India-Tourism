@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./Comp/Home";
+import Navbar from "./Comp/Navbar";
+import Product from "./Comp/Product";
+import ImmersiveExperience from "./Comp/ImmersiveExpreince";
+import ViewallCard from "./Comp/ViewallCard";
+import SingleCity from "./Comp/SingleCity";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/Product" element={<Product />} />
+        <Route path="/ImmersiveExperience" element={<ImmersiveExperience/>} />
+        <Route path="/viewallcard/" element={<ViewallCard/>}/>
+      <Route path= "/singlecity/:id"    element={<SingleCity/>} />
+      
+      
+      </Routes>
+    </BrowserRouter>
   );
 }
 
