@@ -1,8 +1,7 @@
-import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Grid, Button, CardActions } from '@mui/material';
+import React, { lazy, Suspense,  } from "react";
+import { Card, CardContent, Typography, Grid, Button, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom'; 
 
-// Import your image assets
 import agra from '../media/card/agra.webp';
 import jaipur from '../media/card/jaipur.jpg';
 import jodhpur from '../media/card/jodhpur.webp';
@@ -33,6 +32,9 @@ import jaisalmer from '../media/card/jaisalmer.jpg';
 import coorg from '../media/card/coorg.jpg';
 import ranthambore from '../media/card/ranthambore.jpg';
 import darjeeling from '../media/card/darjeeling.jpg';
+
+
+const CardMediaa = lazy(() => import("@mui/material/CardMedia"));
 
 function ViewallCard() {
 
@@ -374,12 +376,14 @@ function ViewallCard() {
             {data.map((city) => (
                 <Grid item xs={12} sm={6} md={4} key={city.id}>
                     <Card style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <CardMedia
-                            component="img"
-                            alt={city.name}
-                            style={{ height: 200, objectFit: 'cover' }} // Adjust image height for square card
-                            image={city.imgee}
-                        />
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <CardMediaa
+                                component="img"
+                                alt={city.name}
+                                style={{ height: 200, objectFit: 'cover' }} 
+                                image={city.imgee}
+                            />
+                        </Suspense>
                         <CardContent style={{ flexGrow: 1 }}>
                             <Typography gutterBottom variant="h5" component="div">
                                 {city.name}
@@ -406,5 +410,4 @@ function ViewallCard() {
         </Grid>
     );
 }
-
 export default ViewallCard;

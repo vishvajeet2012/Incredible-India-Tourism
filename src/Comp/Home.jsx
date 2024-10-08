@@ -1,11 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { GenerateSlides } from "../utils/GenerateSlides";
 import DoneIcon from "@mui/icons-material/Done";
 import mobilee from "../media/mobile/01.png";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import styless from "../css/MyComponent.module.css";
-
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -14,8 +13,10 @@ import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css/skyblue";
 import "@splidejs/react-splide/css/sea-green";
 import "@splidejs/react-splide/css/core";
-import CardSlider from "./CardSlider";
-import ViewallCard from "./ViewallCard";
+
+// Lazy load the components
+const CardSlider = lazy(() => import("./CardSlider"));
+const ViewallCard = lazy(() => import("./ViewallCard"));
 
 const Home = () => {
   const options = {
@@ -29,14 +30,14 @@ const Home = () => {
 
   return (
     <>
-      <div className="wrapper">
-        <h2 id="autoplay-example-heading">Indian Tourism</h2>
+      <div style={{zIndex:-99}} className="wrapper">
+        <h2  id="autoplay-example-heading"></h2>
         <Splide
           options={options}
           aria-labelledby="autoplay-example-heading"
           hasTrack={false}
         >
-          <div style={{ position: "relative" }}>
+          <div style={{zIndex:-99 ,position: "relative" }}>
             <SplideTrack>
               {GenerateSlides().map((slide) => (
                 <SplideSlide key={slide.src}>
@@ -57,15 +58,10 @@ const Home = () => {
           <div className="splide__progress">
             <div className="splide__progress__bar" />
           </div>
-
-          {/* <button className="splide__toggle">
-                        <span className="splide__toggle__play">Play</span>
-                        <span className="splide__toggle__pause">Pause</span>
-                    </button> */}
         </Splide>
       </div>
 
-      <hr></hr>
+      <hr />
 
       <React.Fragment>
         <CssBaseline />
@@ -83,7 +79,7 @@ const Home = () => {
               We guarantee you'll save on your sightseeing!
             </h1>
             <Box
-              sx={{ display: "flex ", flexDirection: "row", flex: "nowwrap" }}
+              sx={{ display: "flex", flexDirection: "row", flex: "nowrap" }}
             >
               <Box
                 className={styless.flexinfo}
@@ -111,34 +107,45 @@ const Home = () => {
                 </div>
               </Box>
               <Box className={styless.boxmobile}>
-                <img className={styless.mobileee} src={mobilee} alt="Example" />
+                <img
+                  className={styless.mobileee}
+                  src={mobilee}
+                  alt="Example"
+                />
               </Box>
             </Box>
           </Box>
         </Container>
       </React.Fragment>
-      <hr></hr>
+
+      <hr />
+
       <Box sx={{ width: "97%", bgcolor: "white" }}>
         <h3 className={styless.headingg}>Access 90+ Indian attractions</h3>
         <h2 className={styless.headingg}>
-          "From the Ganges to ancient forts, discover India's wonders with
-          us..."
+          "From the Ganges to ancient forts, discover India's wonders with us..."
         </h2>
-        <CardSlider></CardSlider>
+
+        {/* Lazy-loaded CardSlider */}
+        <Suspense fallback={<div>Loading Card Slider...</div>}>
+          <CardSlider />
+        </Suspense>
 
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center", // Centers horizontally
-            alignItems: "center", // Centers vertically
-            height: "100%", // Optional: Ensures the box takes full height of its parent
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
           }}
         >
-       <Link to="/viewallcard/"> <button className={styless.viewall}>View all 90+ attractions</button></Link> 
+          <Link to="/viewallcard/">
+            <button className={styless.viewall}>
+              View all 90+ attractions
+            </button>
+          </Link>
         </Box>
       </Box>
-
-  
     </>
   );
 };
