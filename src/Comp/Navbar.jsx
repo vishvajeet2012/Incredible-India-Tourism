@@ -4,7 +4,7 @@ import '../css/Navbar.css';
 
 const pages = [
   { name: 'Home', link: '/' }, 
-  { name: 'Product', link: '/Product' },
+  { name: 'Product', link: '/ImmersiveExperience' },
   { name: 'City', link: '/city' },
   { name: 'Food', link: '/Food' },
   { name: 'About', link: '/about' },
