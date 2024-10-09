@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import { GenerateSlides } from "../utils/GenerateSlides";
+// import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+// import { GenerateSlides } from "../utils/GenerateSlides";
 import DoneIcon from "@mui/icons-material/Done";
 import mobilee from "../media/mobile/01.png";
 import { Link } from "react-router-dom";
@@ -13,6 +13,8 @@ import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css/skyblue";
 import "@splidejs/react-splide/css/sea-green";
 import "@splidejs/react-splide/css/core";
+import HomeScreen from "./HomeScreen";
+
 
 // Lazy load the components
 const CardSlider = lazy(() => import("./CardSlider"));
@@ -30,11 +32,7 @@ const Home = () => {
 
   return (
     <>
-    <div className="">
-
-
-
-    </div>
+     <HomeScreen/>
 
       <hr />
 
