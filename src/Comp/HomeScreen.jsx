@@ -39,8 +39,7 @@ function HomeScreen() {
           </div>
         </div>
 
-        {/* Optional additional image */}
-        <img src="/path-to-another-image.jpg" alt="Placeholder" className={styles.extraImage} />
+        
       </div>
     </div>
   );

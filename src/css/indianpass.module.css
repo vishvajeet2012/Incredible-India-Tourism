@@ -15,25 +15,42 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+   
   }
   
   .overlay {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center; */
     color: white;
-    /* background: rgba(0, 0, 0, 0.5); Semi-trans */
-    background : transparent;
-    padding: 40px;
+    background: rgba(0, 0, 0, 0.429);
+    backdrop-filter: blur(5px);
+    /* background : transparent; */
+    padding: 30px;
   }
   
   .textContainer {
     max-width: 800px;
+    opacity: 0;
+    animation: fade-out 4s forwards;
+    
   }
-  
+    @keyframes fade-out {
+        0%{
+            opacity: 0;
+
+        }
+       50% {
+                opacity: 0.9;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
   .mainTitle {
     font-size: 3rem;
     font-weight: bold;
