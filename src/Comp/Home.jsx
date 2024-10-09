@@ -30,36 +30,11 @@ const Home = () => {
 
   return (
     <>
-      <div style={{zIndex:-99}} className="wrapper">
-        <h2  id="autoplay-example-heading"></h2>
-        <Splide
-          options={options}
-          aria-labelledby="autoplay-example-heading"
-          hasTrack={false}
-        >
-          <div style={{zIndex:-99 ,position: "relative" }}>
-            <SplideTrack>
-              {GenerateSlides().map((slide) => (
-                <SplideSlide key={slide.src}>
-                  <img
-                    src={slide.src}
-                    alt={slide.alt}
-                    style={{
-                      width: "100vw",
-                      height: "50vh",
-                      objectFit: "fill",
-                    }}
-                  />
-                </SplideSlide>
-              ))}
-            </SplideTrack>
-          </div>
+    <div className="">
 
-          <div className="splide__progress">
-            <div className="splide__progress__bar" />
-          </div>
-        </Splide>
-      </div>
+
+
+    </div>
 
       <hr />
 
