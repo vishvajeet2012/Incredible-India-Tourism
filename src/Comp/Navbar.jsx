@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../css/Navbar.css';
+import Navstyless from '../css/Navbar.module.css';
 
 const pages = [
   { name: 'Home', link: '/' }, 
@@ -19,19 +19,23 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="logo">
+    <nav className={Navstyless.navbar}>
+      <div className={Navstyless.container}>
+        <div className={Navstyless.logo}>
           <Link to="/">India Tourism</Link>
         </div>
-        <div className="hamburger" onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <div 
+          className={Navstyless.hamburger} 
+          onClick={toggleMenu} 
+          aria-label="Toggle navigation"
+        >
+          <div className={`${Navstyless.bar} ${isOpen ? Navstyless.barActive : ''}`}></div>
+          <div className={`${Navstyless.bar} ${isOpen ? Navstyless.barActive : ''}`}></div>
+          <div className={`${Navstyless.bar} ${isOpen ? Navstyless.barActive : ''}`}></div>
         </div>
-        <div className={`nav-links ${isOpen ? 'active' : ''}`}>
+        <div className={`${Navstyless.navLinks} ${isOpen ? Navstyless.active : ''}`}>
           {pages.map((page) => (
-            <Link key={page.name} to={page.link}>
+            <Link key={page.name} to={page.link} onClick={() => setIsOpen(false)}>
               {page.name}
             </Link>
           ))}
