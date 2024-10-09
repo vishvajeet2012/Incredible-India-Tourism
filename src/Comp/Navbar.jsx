@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Navstyless from '../css/Navbar.module.css';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 const pages = [
   { name: 'Home', link: '/' }, 
@@ -12,36 +20,56 @@ const pages = [
 ];
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
   };
 
   return (
-    <nav className={Navstyless.navbar}>
-      <div className={Navstyless.container}>
-        <div className={Navstyless.logo}>
-          <Link to="/">India Tourism</Link>
-        </div>
-        <div 
-          className={Navstyless.hamburger} 
-          onClick={toggleMenu} 
-          aria-label="Toggle navigation"
-        >
-          <div className={`${Navstyless.bar} ${isOpen ? Navstyless.barActive : ''}`}></div>
-          <div className={`${Navstyless.bar} ${isOpen ? Navstyless.barActive : ''}`}></div>
-          <div className={`${Navstyless.bar} ${isOpen ? Navstyless.barActive : ''}`}></div>
-        </div>
-        <div className={`${Navstyless.navLinks} ${isOpen ? Navstyless.active : ''}`}>
+    <AppBar position="static"
+      sx={{ backgroundColor: 'white' }}>
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Link to="/" style={{ textDecoration: 'none', color: 'black' ,fontFamily: "fantasy" }}>
+            India Tourism
+          </Link>
+        </Typography>
+        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           {pages.map((page) => (
-            <Link key={page.name} to={page.link} onClick={() => setIsOpen(false)}>
+            <Button key={page.name} color="inherit" component={Link}   sx={{ color: 'black' }} to={page.link}>
               {page.name}
-            </Link>
+            </Button>
           ))}
-        </div>
-      </div>
-    </nav>
+        </Box>
+        <IconButton 
+          size="large" 
+          edge="start" 
+          color="inherit" 
+          aria-label="menu" 
+          sx={{ display: { xs: 'block', md: 'none' } }} 
+          onClick={handleMenuOpen}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+          sx={{ display: { xs: 'block', md: 'none' } }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page.name} onClick={handleMenuClose} component={Link} to={page.link}>
+              {page.name}
+            </MenuItem>
+          ))}
+        </Menu>
+      </Toolbar>
+    </AppBar>
   );
 }
 
