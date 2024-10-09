@@ -20,6 +20,14 @@ import cholebhature from '../media/food/chole bhature.jpg'
 import rogan from '../media/food/roganjosh.jpg'
 import rajmachawal from '../media/food/rajma chawal.webp'
 import parathas from '../media/food/parathas.jpg'
+import idli from '../media/food/idili.webp'
+import appam from '../media/food/appam and veg.jpg'
+import HyderabadiBiryani from '../media/food/HyderabadiBiryani.jpg'
+import Pongal from '../media/food/PONGALHOT_2.webp'
+import vadaPav from '../media/food/vada-pav-recipe.jpg'
+import dhokla from '../media/food/Rasawala_Dhokla_.jpg'
+import goanFish from '../media/food/goan fish curry.jpg'
+import misalPav from '../media/food/Misal-Pav-2-2-e1722869218662-720x720.webp'
 
 
 
@@ -93,7 +101,7 @@ export default function ImmersiveExperience() {
             origin: "Tamil Nadu",
             ingredients: ["Rice", "Lentils", "Spices", "Vegetables"],
             price: 80,
-            imageUrl: "../media/food/idli_sambar.jpg",
+            imageUrl: idli,
           },
           {
             id: 6,
@@ -101,7 +109,7 @@ export default function ImmersiveExperience() {
             origin: "Kerala",
             ingredients: ["Rice Flour", "Coconut Milk", "Vegetables", "Spices"],
             price: 120,
-            imageUrl: "../media/food/appam_stew.jpg",
+            imageUrl: appam,
           },
           {
             id: 7,
@@ -109,7 +117,7 @@ export default function ImmersiveExperience() {
             origin: "Telangana",
             ingredients: ["Basmati Rice", "Chicken/Mutton", "Yogurt", "Spices", "Saffron"],
             price: 250,
-            imageUrl: "../media/food/hyderabadi_biryani.jpg",
+            imageUrl: HyderabadiBiryani,
           },
           {
             id: 8,
@@ -117,7 +125,7 @@ export default function ImmersiveExperience() {
             origin: "Tamil Nadu",
             ingredients: ["Rice", "Lentils", "Ghee", "Pepper", "Cumin"],
             price: 100,
-            imageUrl: "../media/food/pongal.jpg",
+            imageUrl: Pongal,
           }
         ]
       },
@@ -130,7 +138,7 @@ export default function ImmersiveExperience() {
             origin: "Maharashtra",
             ingredients: ["Potato", "Chickpea Flour", "Bread", "Spices"],
             price: 50,
-            imageUrl: "../media/food/vada_pav.jpg",
+            imageUrl: vadaPav ,
           },
           {
             id: 10,
@@ -138,7 +146,7 @@ export default function ImmersiveExperience() {
             origin: "Gujarat",
             ingredients: ["Rice", "Chickpea Flour", "Yogurt", "Spices"],
             price: 100,
-            imageUrl: "../media/food/dhokla.jpg",
+            imageUrl: dhokla,
           },
           {
             id: 11,
@@ -146,7 +154,7 @@ export default function ImmersiveExperience() {
             origin: "Goa",
             ingredients: ["Fish", "Coconut", "Tamarind", "Spices"],
             price: 200,
-            imageUrl: "../media/food/goan_fish_curry.jpg",
+            imageUrl:  goanFish,
           },
           {
             id: 12,
@@ -154,7 +162,7 @@ export default function ImmersiveExperience() {
             origin: "Maharashtra",
             ingredients: ["Sprouted Lentils", "Pav", "Onions", "Tomatoes", "Spices"],
             price: 80,
-            imageUrl: "../media/food/misal_pav.jpg",
+            imageUrl: misalPav,
           }
         ]
       },
@@ -250,13 +258,16 @@ export default function ImmersiveExperience() {
       </Typography>
 
       {localIndianFoods.regions.map((region, index) => (
-        <div key={index} style={{ marginBottom: '20px' }}>
-          <Typography variant="h5" gutterBottom>
-            {region.region}
+
+
+        <div key={index} style={{ marginBottom: '10px' }}>
+      
+          <Typography sx={{textAlign:'center', fontFamily:'fantasy'}} variant="h4" gutterBottom>
+            {region.region} 
           </Typography>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
             {region.popularFoods.map(food => (
-              <Card key={food.id} sx={{ width: 345, maxWidth: 345 }}>
+              <Card key={food.id} sx={{ width: 255, maxWidth: 255 }}>
                 <CardHeader
              
                    
