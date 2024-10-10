@@ -34,7 +34,7 @@ const Home = () => {
     <>
      <HomeScreen/>
 
-      <hr />
+
 
       <React.Fragment>
         <CssBaseline />
