@@ -14,7 +14,7 @@ const pages = [
   { name: 'Home', link: '/' }, 
   { name: 'Product', link: '/ImmersiveExperience' },
   { name: 'City', link: '/city' },
-  { name: 'Food', link: '/Food' },
+  { name: 'Food', link: '/ImmersiveExperience' },
   { name: 'About', link: '/about' },
   { name: 'Contact', link: '/Contact' }
 ];
