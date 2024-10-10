@@ -39,7 +39,7 @@ function HomeScreen() {
 
           {/* Button Section */}
           <div className={styles.buttonGroup}>
-            <button className={styles.buyNowButton}>Buy now</button>
+            {/* <button className={styles.buyNowButton}>Buy now</button> */}
             <button onClick={viewall} className={styles.viewAttractionsButton}>View all attractions</button>
           </div>
         </div>
