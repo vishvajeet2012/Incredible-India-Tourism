@@ -1,8 +1,13 @@
 import { Box } from "@mui/material";
+import {useNavigate} from 'react-router-dom'
 import homeImg from "../media/slider/India Tourism .jpg";
 import styles from "../css/indianpass.module.css"; // Corrected CSS import
 
 function HomeScreen() {
+  const navi = useNavigate()
+  function viewall () {
+    navi("/viewallcard")
+  }
   return (
     <div className={styles.container}>
       {/* Background Image */}
@@ -35,7 +40,7 @@ function HomeScreen() {
           {/* Button Section */}
           <div className={styles.buttonGroup}>
             <button className={styles.buyNowButton}>Buy now</button>
-            <button className={styles.viewAttractionsButton}>View all attractions</button>
+            <button onClick={viewall} className={styles.viewAttractionsButton}>View all attractions</button>
           </div>
         </div>
 
