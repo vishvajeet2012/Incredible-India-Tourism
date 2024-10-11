@@ -1,14 +1,3 @@
-import { useParams } from "react-router-dom"
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box'
-
-// Import your image assets
 import agra from '../media/card/agra.webp';
 import jaipur from '../media/card/jaipur.jpg';
 import jodhpur from '../media/card/jodhpur.webp';
@@ -39,7 +28,7 @@ import jaisalmer from '../media/card/jaisalmer.jpg';
 import coorg from '../media/card/coorg.jpg';
 import ranthambore from '../media/card/ranthambore.jpg';
 import darjeeling from '../media/card/darjeeling.jpg';
-import { useEffect, useState } from "react";
+
 
 
 
@@ -48,9 +37,7 @@ import { useEffect, useState } from "react";
 
 
 
-function SingleCity(props){
-
-    const data = [
+export const citiesData = [
         { 
             id: 1, 
             name: "Agra", 
@@ -382,87 +369,3 @@ function SingleCity(props){
             bestTimeToVisit: "March to June, September to December" // Best Time to Visit
         }
     ];
-    
-
- const {id} =  useParams()
-
-
- const [city, setCity] = useState([]);
-
- useEffect(() => {
-    const cityId = parseInt(id, 10);
-
-    const filteredCity = data.find((item) => item.id === cityId);
-        setCity(filteredCity)
-
-
- }, [id])
- console.log(city)
- 
-
-
-
-
-//                 const [city,setCity]=useState()
-    
-//                             useEffect(()=>{
-//                      const filterData = data.filter((city)=> city.id===parseInt(id))
-                     
-//                     console.log(filterData) 
-//                     //  data.filter((city)=> city.id === parseInt(id));
-//                         // setCity(filterData[0])
-//                         //     },[id])  
-
-//                             })
-
-// console.log(city)
-
-
-    return (
-    <Box             sx={{
-        width: '100%',
-    height:'100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 3,
-        boxShadow: 3
-    }}
->
- <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="250"
-        image={city.imgee}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-        {city.name}
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.error' }}>
-       {city.des}
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Attraction -: 
-       { city.attractions}
-        </Typography>
-
-       
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        Best Time To Vist -: 
-       { city.bestTimeToVisit}
-        </Typography>
-
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    </Box>
-    )  
-}
-
-
-export default SingleCity;
