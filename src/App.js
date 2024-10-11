@@ -6,6 +6,7 @@ import Product from "./Comp/Product";
 import ImmersiveExperience from "./Comp/ImmersiveExpreince";
 import ViewallCard from "./Comp/ViewallCard";
 import SingleCity from "./Comp/SingleCity";
+import { Counter } from "./redux/Counter";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/ImmersiveExperience" element={<ImmersiveExperience/>} />
         <Route path="/viewallcard/" element={<ViewallCard/>}/>
       <Route path= "/singlecity/:id"    element={<SingleCity/>} />
+      <Route path="/counter" element={<Counter/>} />
       
       
       </Routes>
