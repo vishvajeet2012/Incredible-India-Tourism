@@ -18,7 +18,7 @@ import HomeScreen from "./HomeScreen";
 
 // Lazy load the components
 const CardSlider = lazy(() => import("./CardSlider"));
-const ViewallCard = lazy(() => import("./ViewallCard"));
+ lazy(() => import("./ViewallCard"));
 
 const Home = () => {
   const options = {

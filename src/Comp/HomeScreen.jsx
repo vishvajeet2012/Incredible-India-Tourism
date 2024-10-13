@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+
 import {useNavigate} from 'react-router-dom'
 import homeImg from "../media/slider/India Tourism .jpg";
 import styles from "../css/indianpass.module.css"; // Corrected CSS import

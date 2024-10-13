@@ -28,6 +28,14 @@ import vadaPav from '../media/food/vada-pav-recipe.jpg'
 import dhokla from '../media/food/Rasawala_Dhokla_.jpg'
 import goanFish from '../media/food/goan fish curry.jpg'
 import misalPav from '../media/food/Misal-Pav-2-2-e1722869218662-720x720.webp'
+import macher from '../media/food/macher-jhol.jpg'
+import momos from '../media/food/momos.jpg'
+import liti from '../media/food/litti-chokha.jpg'
+import Pakhala from '../media/food/pakhala-bhat.webp'
+import pohos from '../media/food/poha.jpg'
+import bhutte from '../media/food/bhutte.jpg'
+import dal_bafla from '../media/food/1000068501.jpg'
+import sabhu from '../media/food/sabudana.jpg'
 
 
 
@@ -175,7 +183,7 @@ export default function ImmersiveExperience() {
             origin: "West Bengal",
             ingredients: ["Fish", "Potatoes", "Tomatoes", "Spices"],
             price: 200,
-            imageUrl: "../media/food/macher_jhol.jpg",
+            imageUrl: macher,
           },
           {
             id: 14,
@@ -183,7 +191,7 @@ export default function ImmersiveExperience() {
             origin: "Sikkim",
             ingredients: ["Flour", "Vegetables", "Meat", "Spices"],
             price: 100,
-            imageUrl: "../media/food/momos.jpg",
+            imageUrl: momos,
           },
           {
             id: 15,
@@ -191,7 +199,7 @@ export default function ImmersiveExperience() {
             origin: "Bihar",
             ingredients: ["Wheat Flour", "Gram Flour", "Eggplant", "Potato", "Spices"],
             price: 60,
-            imageUrl: "../media/food/litti_chokha.jpg",
+            imageUrl:liti,
           },
           {
             id: 16,
@@ -199,7 +207,7 @@ export default function ImmersiveExperience() {
             origin: "Odisha",
             ingredients: ["Rice", "Yogurt", "Water", "Cumin", "Green Chilies"],
             price: 50,
-            imageUrl: "../media/food/pakhala_bhata.jpg",
+            imageUrl: Pakhala,
           }
         ]
       },
@@ -212,7 +220,7 @@ export default function ImmersiveExperience() {
             origin: "Madhya Pradesh",
             ingredients: ["Flattened Rice", "Onions", "Peanuts", "Spices"],
             price: 40,
-            imageUrl: "../media/food/poha.jpg",
+            imageUrl: pohos,
           },
           {
             id: 18,
@@ -220,7 +228,7 @@ export default function ImmersiveExperience() {
             origin: "Madhya Pradesh",
             ingredients: ["Corn", "Milk", "Ghee", "Spices"],
             price: 70,
-            imageUrl: "../media/food/bhutte_ka_kees.jpg",
+            imageUrl: bhutte,
           },
           {
             id: 19,
@@ -228,7 +236,7 @@ export default function ImmersiveExperience() {
             origin: "Madhya Pradesh",
             ingredients: ["Wheat Flour", "Ghee", "Lentils", "Spices"],
             price: 150,
-            imageUrl: "../media/food/dal_bafla.jpg",
+            imageUrl: dal_bafla,
           },
           {
             id: 20,
@@ -236,7 +244,7 @@ export default function ImmersiveExperience() {
             origin: "Maharashtra/Madhya Pradesh",
             ingredients: ["Sago", "Peanuts", "Potatoes", "Spices"],
             price: 90,
-            imageUrl: "../media/food/sabudana_khichdi.jpg",
+            imageUrl: sabhu,
           }
         ]
       }
