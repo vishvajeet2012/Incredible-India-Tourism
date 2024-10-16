@@ -133,23 +133,36 @@
 }
 @media only screen and (max-width: 600px) {
   .mainTitle {
-    font-size: 1.6rem;
+    font-size: 2.3rem;
    
    
   }
-  
+  .stats{
+    display: flex;
+    flex-direction: column;
+  }
   .subTitle{
         font-size: 1.1rem;
   }
 
+
   .statValue {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
    
   }
   .statLabel{
-    font-size:1rem;
+    font-size:1.2rem;
+  }
+
+  .buttonGroup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
 
-
+  .overlay {
+      padding: 120px 50px;
+  
+  }
 }
