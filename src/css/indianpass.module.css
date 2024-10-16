@@ -1,134 +1,142 @@
 .container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    /* justify-content: center;*/
-    align-items: center; 
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  
-  .backgroundImage {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-   
-  }
-  
-  .overlay {
-    position: relative;
-    right:990px;  
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center;
-    align-items: center;
-    text-align: center; */
-    animation: slider 2s forwards;
-    
-   
-    color: white;
-    background: rgba(0, 0, 0, 0.49);
-    backdrop-filter: blur(5px);
-    /* background : transparent; */
-    border-radius:0px 20px 20px 0px; 
-    padding:40px;
-  }
-  @keyframes slider {
-    0%{
-          right: 990px;
-    }
-    50%{
-      right: 890px;
-    }
-    
-    100%{
-      right: 0px;
-    }
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* justify-content: center;*/
+  align-items: center; 
+  overflow: hidden;
+  margin-bottom: 10px;
+}
 
-  }
-  
-  .textContainer {
-    max-width: 800px;
-    opacity: 0;
-    animation: fade-out 7s forwards;
-    
-  }
-    @keyframes fade-out {
-        0%{
-            opacity: 0;
+.backgroundImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+ 
+}
 
-        }
-       50% {
-                opacity: 0.9;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
-    
-  .mainTitle {
-    font-size: 3rem;
-    font-weight: bold;
+.overlay {
+  position: relative;
+  right:990px;  
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+  animation: slider 2s forwards;
+  
+ 
+  color: white;
+  background: rgba(0, 0, 0, 0.49);
+  backdrop-filter: blur(5px);
+  /* background : transparent; */
+  border-radius:0px 20px 20px 0px; 
+  padding:40px;
+}
+@keyframes slider {
+  0%{
+        right: 990px;
+  }
+  50%{
+    right: 890px;
   }
   
-  .subTitle {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  100%{
+    right: 0px;
+  }
+
+}
+
+.textContainer {
+  max-width: 800px;
+  opacity: 0;
+  animation: fade-out 7s forwards;
+  
+}
+  @keyframes fade-out {
+      0%{
+          opacity: 0;
+
+      }
+     50% {
+              opacity: 0.9;
+      }
+      100%{
+          opacity: 1;
+      }
   }
   
-  .stats {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+.mainTitle {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.statLabel {
+  font-size: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+}
+
+.buyNowButton, .viewAttractionsButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.buyNowButton {
+  background-color: #00a2a5;
+  color: white;
+  border-radius: 5px;
+}
+
+.viewAttractionsButton {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.extraImage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 30%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 600px) {
+  container{
+  width: 50%;
+  height:10vh
   }
-  
-  .statItem {
-    text-align: center;
-  }
-  
-  .statValue {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
-  .statLabel {
-    font-size: 1rem;
-  }
-  
-  .buttonGroup {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .buyNowButton, .viewAttractionsButton {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .buyNowButton {
-    background-color: #00a2a5;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .viewAttractionsButton {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
-  }
-  
-  .extraImage {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    max-width: 30%;
-    object-fit: cover;
-  }
-  
+
+
+
+}

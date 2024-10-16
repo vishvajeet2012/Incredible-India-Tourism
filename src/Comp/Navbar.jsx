@@ -1,75 +1,42 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import styles from "../css/Navbar.module.css"
 
 const pages = [
   { name: 'Home', link: '/' }, 
-  { name: 'Product', link: '/ImmersiveExperience' },
-  { name: 'City', link: '/city' },
+  { name: 'City', link: '/viewallcard' },
   { name: 'Food', link: '/ImmersiveExperience' },
   { name: 'About', link: '/about' },
   { name: 'Contact', link: '/Contact' }
 ];
 
 function Navbar() {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <AppBar position="static"
-      sx={{ backgroundColor: 'white' }}>
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/" style={{ textDecoration: 'none', color: 'black' ,fontFamily: "fantasy" }}>
-            India Tourism
-          </Link>
-        </Typography>
-        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+    <nav className={styles.navbar}>
+      <div className={styles.container}>
+        <div className={styles.logo}>
+          <Link to="/">India Tourism</Link>
+        </div>
+        <div className={`${styles['nav-links']} ${mobileMenuOpen ? styles.active : ''}`}>
           {pages.map((page) => (
-            <Button key={page.name} color="inherit" component={Link}   sx={{ color: 'black' }} to={page.link}>
+            <Link key={page.name} to={page.link} onClick={() => setMobileMenuOpen(false)}>
               {page.name}
-            </Button>
+            </Link>
           ))}
-        </Box>
-        <IconButton 
-          size="large" 
-          edge="start" 
-          color="inherit" 
-          aria-label="menu" 
-          sx={{ display: { xs: 'block', md: 'none' } }} 
-          onClick={handleMenuOpen}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleMenuClose}
-          sx={{ display: { xs: 'block', md: 'none' } }}
-        >
-          {pages.map((page) => (
-            <MenuItem key={page.name} onClick={handleMenuClose} component={Link} to={page.link}>
-              {page.name}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Toolbar>
-    </AppBar>
+        </div>
+        <div className={styles.hamburger} onClick={toggleMobileMenu}>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+        </div>
+      </div>
+    </nav>
   );
 }
 
