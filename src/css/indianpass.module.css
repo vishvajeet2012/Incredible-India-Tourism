@@ -142,7 +142,14 @@
         font-size: 1.1rem;
   }
 
-
+  .statValue {
+    font-size: 1.2rem;
+   
+  }
+  .statLabel{
+    font-size:1rem;
+  }
+  
 
 
 }
