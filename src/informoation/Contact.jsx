@@ -12,7 +12,7 @@ function Contact() {
                     <div className={styles.contact_info}>
                         <p><strong>Address:</strong></p>
                         <p>123 Main Street,</p>
-                        <p>Bhinmal, Rajasthan, 343029, India</p>
+                        <p>jaipur, Rajasthan, 302020, India</p>
 
                         <p><strong>Phone:</strong> +91 9876543210</p>
 
