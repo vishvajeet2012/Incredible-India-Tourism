@@ -6,6 +6,8 @@ import Product from "./Comp/Product";
 import ImmersiveExperience from "./Comp/ImmersiveExpreince";
 import ViewallCard from "./Comp/ViewallCard";
 import SingleCity from "./Comp/SingleCity";
+import About from "./informoation/About";
+import Contact from "./informoation/Contact";
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
         <Route path="/ImmersiveExperience" element={<ImmersiveExperience/>} />
         <Route path="/viewallcard/" element={<ViewallCard/>}/>
       <Route path= "/singlecity/:id"    element={<SingleCity/>} />
-      
+      <Route path="/about"     element={<About/>} />
+      <Route path="contact" element={<Contact/>} />
       
       </Routes>
     </BrowserRouter>
