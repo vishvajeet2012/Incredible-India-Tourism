@@ -1,0 +1,23 @@
+.mainContainer{
+    width: 100%;
+    background-color:rgb(241, 243, 247);
+    height: 50vh;
+   text-align: center;
+   padding: 2.5rem 2rem;
+
+}
+
+.headingBox{
+        
+}
+.heading{
+    font-size:24px;
+   
+}
+.subheading{
+    margin-top: 10px;
+    margin-bottom: 1.5rem;
+}
+.subheading{
+    font-size: 32px;
+}
