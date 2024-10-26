@@ -1,14 +1,18 @@
 .mainContainer{
     width: 100%;
     background-color:rgb(241, 243, 247);
-    height: 50vh;
+    height: 80vh;
    text-align: center;
    padding: 2.5rem 2rem;
 
 }
+h1,h2,h3,h4,h5,h6{
+    font-weight:700;
+}
 
 .headingBox{
-        
+      color:black ;
+    
 }
 .heading{
     font-size:24px;
@@ -21,3 +25,39 @@
 .subheading{
     font-size: 32px;
 }
+
+.infomationBox{
+    display: flex;
+    justify-content: center;
+
+}
+
+svg
+{width: 100%;    
+}
+
+.FindmoreButtonBox{
+    margin: 20px ;
+    padding: 20px;
+}
+.findmorebtn{
+    background: royalblue;
+        padding: 0.8rem 1.2rem;
+        color: aliceblue;
+        font-size: larger;
+        border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .infomationBox{
+        display: flex;
+        justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    }
+
+}
+
+
+
