@@ -1,11 +1,11 @@
 .mainContainer{
-    width: 100%;
-    background-color:rgb(241, 243, 247);
-    height: 80vh;
-   text-align: center;
-   padding: 2.5rem 2rem;
+            width: 100%;
+            background-color:rgb(241, 243, 247);
+            height: 80vh;
+        text-align: center;
+        padding: 2.5rem 2rem;
 
-}
+        }
 h1,h2,h3,h4,h5,h6{
     font-weight:700;
 }
@@ -46,10 +46,25 @@ svg
         color: aliceblue;
         font-size: larger;
         border-radius: 10px;
+        border:1px solid royalblue;
+        transition: all 600ms ease;
+
+}
+.findmorebtn:hover{
+    background:transparent ;
+    color:royalblue;
 }
 
 
 @media only screen and (max-width: 600px) {
+    .mainContainer{
+     
+        height: 160vh;
+    text-align: center;
+    padding: 2.5rem 2rem;
+
+    }
+
     .infomationBox{
         display: flex;
         justify-content: center;
