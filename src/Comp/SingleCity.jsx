@@ -1,14 +1,6 @@
 import { useParams } from "react-router-dom"
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box'
 
-// Import your image assets
 import agra from '../media/card/agra.webp';
 import jaipur from '../media/card/jaipur.jpg';
 import jodhpur from '../media/card/jodhpur.webp';
@@ -40,6 +32,8 @@ import coorg from '../media/card/coorg.jpg';
 import ranthambore from '../media/card/ranthambore.jpg';
 import darjeeling from '../media/card/darjeeling.jpg';
 import { useEffect, useState } from "react";
+import { shouldSkipGeneratingVar } from "@mui/material";
+import { red } from "@mui/material/colors";
 
 
 
@@ -419,48 +413,80 @@ function SingleCity(props){
 
 
     return (
-    <Box             sx={{
-        width: '100%',
-    height:'100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 3,
-        boxShadow: 3
-    }}
->
- <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="250"
-        image={city.imgee}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-        {city.name}
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.error' }}>
-       {city.des}
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Attraction -: 
-       { city.attractions}
-        </Typography>
-
        
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        Best Time To Vist -: 
-       { city.bestTimeToVisit}
-        </Typography>
+        <div
+        style={{
+          width: '100%',
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#f0f0f0'
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '345px',
+            border: '1px solid #ddd',
+            borderRadius: '10px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            backgroundColor: '#fff'
+          }}
+        >
+          <img
+            alt="green iguana"
+            style={{ height: '250px', width: '100%', objectFit: 'cover' }}
+            src={city.imgee}
+          />
+          <div style={{ padding: '16px' }}>
+            <h5 style={{ margin: '0 0 8px' }}>{city.name}</h5>
+            <p style={{ color: 'red', margin: '0 0 8px' }}>{city.des}</p>
+            <p style={{ color: '#555', margin: '0 0 8px' }}>
+              Attraction -: {city.attractions}
+            </p>
+            <p style={{ color: '#555', margin: '0 0 16px' }}>
+              Best Time To Visit -: {city.bestTimeToVisit}
+            </p>
+          </div>
+          <div
+            style={{
+              padding: '16px',
+              display: 'flex',
+              justifyContent: 'space-between'
+            }}
+          >
+            <button
+              style={{
+                fontSize: '14px',
+                padding: '8px 16px',
+                backgroundColor: '#007BFF',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
+              Share
+            </button>
+            <button
+              style={{
+                fontSize: '14px',
+                padding: '8px 16px',
+                backgroundColor: '#28A745',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+      
 
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    </Box>
     )  
 }
 

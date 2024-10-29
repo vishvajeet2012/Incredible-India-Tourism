@@ -3,8 +3,8 @@
     color: rgb(0, 0, 0); 
 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-    position: relative;
-    background-color: white; /* Background color for navbar */
+    position:sticky;
+  background-color: rgba(255, 255, 255, 0.199);
 }
 
 .container {

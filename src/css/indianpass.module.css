@@ -19,6 +19,7 @@
 }
 
 .overlay {
+  z-index: -1; 
   position: relative;
   right:990px;  
   /* display: flex;
@@ -27,10 +28,8 @@
   align-items: center;
   text-align: center; */
   animation: slider 1s forwards;
-  
- 
-  color: white;
-  background: rgba(0, 0, 0, 0.49);
+color: white;
+  background: rgba(0, 0, 0, 0.09);
   backdrop-filter: blur(5px);
   /* background : transparent; */
   border-radius:0px 10px 10px 0px; 
@@ -39,15 +38,18 @@
 @keyframes slider {
   0%{
         right: 990px;
+     border-radius:0px 390px 390px 0px; 
+     background: rgba(0, 0, 0, 0.01);
+
   }
-  50%{
-    right: 890px;
-  }
+ 
   
   100%{
     right: 0px;
-  }
+    border-radius:0px 10px 10px 0px; 
+    background: rgba(0, 0, 0, 0.49);
 
+  }
 }
 
 .textContainer {
@@ -118,11 +120,81 @@
 }
 
 .viewAttractionsButton {
-  background-color: transparent;
+
   color: white;
   border: 2px solid white;
   border-radius: 5px;
+  
 }
+
+
+
+.viewAttractionsButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  background: transparent;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.viewAttractionsButton:hover {
+  transform: translateY(5px);
+}
+
+.viewAttractionsButton::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  background-image: conic-gradient(
+    transparent 10deg,
+    rgb(140, 223, 241),
+    90deg,
+    transparent 170deg
+  );
+  width: 200%;
+  height: 500%;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.viewAttractionsButton:after {
+  content: "View all attractions";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.274);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  color: #fff;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
 
 .extraImage {
   position: absolute;
