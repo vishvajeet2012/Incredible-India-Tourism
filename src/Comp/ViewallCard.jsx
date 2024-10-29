@@ -1,6 +1,9 @@
 import React, { lazy, Suspense,  } from "react";
-import { Card, CardContent, Typography, Grid, Button, CardActions } from '@mui/material';
+
 import { Link } from 'react-router-dom'; 
+
+import { Typography, Grid, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
+
 
 import agra from '../media/card/agra.webp';
 import jaipur from '../media/card/jaipur.jpg';
@@ -372,42 +375,58 @@ function ViewallCard() {
     ];
     
     return (
-        <Grid container spacing={2}>
-            {data.map((city) => (
-                <Grid item xs={12} sm={6} md={4} key={city.id}>
-                    <Card style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <Suspense fallback={<div>Loading...</div>}>
-                            <CardMediaa
-                                component="img"
-                                alt={city.name}
-                                style={{ height: 200, objectFit: 'cover' }} 
-                                image={city.imgee}
-                            />
-                        </Suspense>
-                        <CardContent style={{ flexGrow: 1 }}>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {city.name}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {city.des}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                <strong>Attractions:</strong> {city.attractions}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                <strong>Budget:</strong> {city.budget}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small" color="primary">Info</Button>
-                            <Link to={`/singlecity/${city.id}`} style={{ textDecoration: 'none' }}>
-                                <Button size="small" color="secondary">Booking</Button>
-                            </Link>
-                        </CardActions>
-                    </Card>
-                </Grid>
-            ))}
-        </Grid>
+        <div className="pt-2 px-4">
+            <Typography className="text-center mt-3" variant="h3" gutterBottom>
+                Explore Amazing Destinations in India
+            </Typography>
+            <Typography className="text-center mx-9 px-10" variant="body1" paragraph>
+                Discover the rich culture, history, and breathtaking landscapes of India. From the majestic Taj Mahal in Agra to the serene backwaters of Kerala, each city offers a unique experience. Whether you're looking for adventure, relaxation, or a taste of local cuisine, there's something for everyone.
+            </Typography>
+            <Typography  className="text-center mx-9 px-10"  variant="h5" gutterBottom>
+                Plan Your Next Adventure Today!
+            </Typography>
+            <Typography  className="text-center mx-9 px-10"  variant="body1" paragraph>
+                Browse through our collection of top destinations and find your next travel spot. Click on any city card for more details and booking options!
+            </Typography>
+
+            <Grid container spacing={1}>
+                {data.map((city) => (
+                    <Grid item xs={12} sm={6} md={4} key={city.id}>
+                        <Card className="border-solid border-2 border-white-500" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <CardMedia
+                                    component="img"
+                                    alt={city.name}
+                                    style={{ height: 250, objectFit: 'cover' }} 
+                                    image={city.imgee}
+                                />
+                            </Suspense>
+                            <CardContent style={{ flexGrow: 1 }}>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {city.name}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    {city.des}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    <strong>Attractions:</strong> {city.attractions}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    <strong>Budget:</strong> {city.budget}
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small" color="primary">Info</Button>
+                                <Link to={`/singlecity/${city.id}`} style={{ textDecoration: 'none' }}>
+                                    <Button size="small" color="secondary">Booking</Button>
+                                </Link>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
+        </div>
     );
-}
+};
+
 export default ViewallCard;

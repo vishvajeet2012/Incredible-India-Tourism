@@ -8,6 +8,8 @@ import ViewallCard from "./Comp/ViewallCard";
 import SingleCity from "./Comp/SingleCity";
 import About from "./informoation/About";
 import Contact from "./informoation/Contact";
+import { Counte } from "./feature/counter/Counte";
+import Cart from "./listing/Cart";
 
 function App() {
   return (
@@ -21,9 +23,11 @@ function App() {
         <Route path="/viewallcard/" element={<ViewallCard/>}/>
       <Route path= "/singlecity/:id"    element={<SingleCity/>} />
       <Route path="/about"     element={<About/>} />
-      <Route path="contact" element={<Contact/>} />
+      <Route path="/contact" element={<Contact/>} />
+      <Route path="/counter" element={<Counte/>} />
+      <Route path="/cart" element={<Cart/>} />
       
-      </Routes>
+       </Routes>
     </BrowserRouter>
   );
 }
