@@ -76,11 +76,21 @@ color:gray;
 .headingg{
   text-align: center;
 }
+div{
+  margin: 0;
+}
+.mainvOX{
+  margin:0px;
+  padding: 0px;
+
+  
+}
 .wind{
   width:80% !important;
   background-color:white;
   margin: 0px;
   padding: 0px;
+
 }
 .viewall{   /*   View all attraction */
 

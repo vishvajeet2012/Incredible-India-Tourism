@@ -1,0 +1,40 @@
+.sliderContainer {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    animation: scroll 20s linear infinite;
+}
+
+.slide {
+    min-width: 200px; /* Adjust width for desired number of cards per view */
+    flex: 0 0 auto;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.image {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+}
+
+.caption {
+    font-size: 1em;
+    color: #333;
+    padding: 10px 0;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

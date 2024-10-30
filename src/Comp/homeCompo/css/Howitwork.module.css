@@ -14,6 +14,11 @@ h1,h2,h3,h4,h5,h6{
       color:black ;
     
 }
+p{
+    margin: 10px 20px;
+    padding: 10px 40px;
+}
+
 .heading{
     font-size:24px;
    
@@ -54,7 +59,6 @@ svg
     background:transparent ;
     color:royalblue;
 }
-
 
 @media only screen and (max-width: 600px) {
     .mainContainer{
