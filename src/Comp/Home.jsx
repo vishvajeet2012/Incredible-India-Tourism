@@ -15,6 +15,7 @@ import "@splidejs/react-splide/css/sea-green";
 import "@splidejs/react-splide/css/core";
 import HomeScreen from "./HomeScreen";
 import Howitwork from "./homeCompo/Howitwork";
+import EmailSub from "./homeCompo/EmailSub";
 
 
 // Lazy load the components
@@ -122,6 +123,7 @@ const Home = () => {
       </Box>
     <hr></hr>
       <Howitwork/>
+    <EmailSub/>
     </>
   );
 };
