@@ -116,10 +116,9 @@ function Howitwork() {
                   ></path>
                 </svg>{" "}
               </div>
-              <h1>Buy</h1>
+              <h1>Scan</h1>
               <p>
-                Pick a 1,2,3,4,5,6,7 or 10-Day credits package,whichever works
-                for your trip
+              Download our highly-rated app to scan in at each attraction.
               </p>
             </div>
 
@@ -181,10 +180,9 @@ function Howitwork() {
                   ></path>
                 </svg>{" "}
               </div>
-              <h1>Buy</h1>
+              <h1>Save</h1>
               <p>
-                Pick a 1,2,3,4,5,6,7 or 10-Day credits package,whichever works
-                for your trip
+              Enjoy guaranteed savings (or we'll refund you the difference!).
               </p>
             </div>
           </div>

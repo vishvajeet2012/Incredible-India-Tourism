@@ -20,9 +20,11 @@ function HomeScreen() {
           <p className={styles.subTitle}>
             The best Indian attractions and activities, all for one low price.
           </p>
-
-          {/* Stats Section */}
-          <div className={styles.stats}>
+          
+          
+          
+          
+                    <div className={styles.stats}>
             <div className={styles.statItem}>
               <h2 className={styles.statValue}>4.3M</h2>
               <p className={styles.statLabel}>purchases</p>

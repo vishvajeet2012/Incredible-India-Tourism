@@ -1,5 +1,5 @@
 import React, { lazy, Suspense,  } from "react";
-
+import {setDestinations, addDestination, updateDestination, removeDestination} from "../feature/citySlice/travelSlice.js"
 import { Link } from 'react-router-dom'; 
 
 import { Typography, Grid, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
@@ -35,6 +35,7 @@ import jaisalmer from '../media/card/jaisalmer.jpg';
 import coorg from '../media/card/coorg.jpg';
 import ranthambore from '../media/card/ranthambore.jpg';
 import darjeeling from '../media/card/darjeeling.jpg';
+import { useDispatch } from "react-redux";
 
 
 const CardMediaa = lazy(() => import("@mui/material/CardMedia"));
@@ -373,6 +374,8 @@ function ViewallCard() {
             bestTimeToVisit: "March to June, September to December" // Best Time to Visit
         }
     ];
+
+                       const dispatch= useDispatch()
     
     return (
         <div className="pt-2 px-4">
@@ -418,7 +421,7 @@ function ViewallCard() {
                             <CardActions>
                                 <Button size="small" color="primary">Info</Button>
                                 <Link to={`/singlecity/${city.id}`} style={{ textDecoration: 'none' }}>
-                                    <Button size="small" color="secondary">Booking</Button>
+                                    <Button onClick={()=>dispatch(addDestination())} size="small" color="secondary">Booking</Button>
                                 </Link>
                             </CardActions>
                         </Card>

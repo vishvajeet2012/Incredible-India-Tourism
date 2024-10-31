@@ -41,12 +41,16 @@ const Home = () => {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="lg">
-          <Box
+          <Box className= {
+            styless.ChooseiNdia
+          }
             sx={{
               bgcolor: "white",
               width: "100%",
               height: "50vh",
               overflow: "hidden",
+        
+            
             }}
           >
             <h3 className={styless.sub}>Why choose The India Pass®? </h3>

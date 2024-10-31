@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../feature/counter/counterSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import travelReducer from '../feature/citySlice/travelSlice';
 
-export default configureStore({
+const store = configureStore({
   reducer: {
-    counter: counterReducer
-  }
-})
+    travel: travelReducer,
+  },
+});
+
+export default store;
