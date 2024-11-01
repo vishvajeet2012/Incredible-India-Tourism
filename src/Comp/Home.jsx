@@ -100,14 +100,17 @@ const Home = () => {
       <hr />
 
       <Box sx={{ width: "97%", bgcolor: "white" }}>
+      <div>
         <h3 className={styless.headingg}>Access 90+ Indian attractions</h3>
         <h2 className={styless.headingg}>
           "From the Ganges to ancient forts, discover India's wonders with us..."
         </h2>
-
+</div>
         {/* Lazy-loaded CardSlider */}
         <Suspense fallback={<div>Loading Card Slider...</div>}>
-          <CardSlider />
+        <div className="px-4">
+          <CardSlider />  
+          </div>                 {/*      CardSlider use here */}
         </Suspense>
 
         <Box

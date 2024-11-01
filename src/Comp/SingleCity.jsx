@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import * as React from 'react';
+import {setDestinations, addDestination, updateDestination, removeDestination} from "../feature/citySlice/travelSlice.js"
 
 import agra from '../media/card/agra.webp';
 import jaipur from '../media/card/jaipur.jpg';
@@ -34,6 +35,7 @@ import darjeeling from '../media/card/darjeeling.jpg';
 import { useEffect, useState } from "react";
 import { shouldSkipGeneratingVar } from "@mui/material";
 import { red } from "@mui/material/colors";
+import { useDispatch } from "react-redux";
 
 
 
@@ -391,7 +393,8 @@ function SingleCity(props){
 
 
  }, [id])
- console.log(city)
+ const dispatch = useDispatch();
+console.warn(dispatch)
  
 
 
@@ -457,6 +460,8 @@ function SingleCity(props){
             }}
           >
             <button
+    onClick={()=> dispatch(addDestination()) }
+
               style={{
                 fontSize: '14px',
                 padding: '8px 16px',
@@ -467,21 +472,9 @@ function SingleCity(props){
                 cursor: 'pointer'
               }}
             >
-              Share
+              Add To Cart
             </button>
-            <button
-              style={{
-                fontSize: '14px',
-                padding: '8px 16px',
-                backgroundColor: '#28A745',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer'
-              }}
-            >
-              Learn More
-            </button>
+        
           </div>
         </div>
       </div>

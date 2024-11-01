@@ -10,6 +10,7 @@ import About from "./informoation/About";
 import Contact from "./informoation/Contact";
 import { Counte } from "./feature/counter/Counte";
 import Cart from "./listing/Cart";
+import Footer from "./Comp/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path="/cart" element={<Cart/>} />
       
        </Routes>
+       <Footer/>
     </BrowserRouter>
   );
 }

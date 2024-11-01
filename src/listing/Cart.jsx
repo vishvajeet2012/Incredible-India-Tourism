@@ -1,10 +1,13 @@
+import { useSelector } from "react-redux";
+
 function Cart() {
     const items = [
         { id: 1, name: 'Item 1', price: 29.99 },
         { id: 2, name: 'Item 2', price: 19.99 },
         { id: 3, name: 'Item 3', price: 39.99 },
     ];
-
+                                  const useSelectorr = useSelector(state=>state)
+                                  console.log(useSelectorr)
     const totalPrice = items.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
     return (

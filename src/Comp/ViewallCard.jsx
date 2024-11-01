@@ -1,8 +1,8 @@
-import React, { lazy, Suspense,  } from "react";
-import {setDestinations, addDestination, updateDestination, removeDestination} from "../feature/citySlice/travelSlice.js"
-import { Link } from 'react-router-dom'; 
+import React, { lazy, Suspense, useEffect, useState } from "react";
+import { Typography, Grid, Card, CardContent, CardActions, Button ,CardMedia } from '@mui/material';
+import { useDispatch } from "react-redux";
 
-import { Typography, Grid, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
+import {setDestinations, addDestination, updateDestination, removeDestination} from "../feature/citySlice/travelSlice.js"
 
 
 import agra from '../media/card/agra.webp';
@@ -35,12 +35,13 @@ import jaisalmer from '../media/card/jaisalmer.jpg';
 import coorg from '../media/card/coorg.jpg';
 import ranthambore from '../media/card/ranthambore.jpg';
 import darjeeling from '../media/card/darjeeling.jpg';
-import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 const CardMediaa = lazy(() => import("@mui/material/CardMedia"));
 
 function ViewallCard() {
+    const dispatch = useDispatch();
 
     const data = [
         { 
@@ -373,63 +374,80 @@ function ViewallCard() {
             travelTips: "Visit the tea gardens and take a ride on the Himalayan Railway.", // Travel Tips
             bestTimeToVisit: "March to June, September to December" // Best Time to Visit
         }
+
+
+
+
     ];
 
-                       const dispatch= useDispatch()
-    
-    return (
-        <div className="pt-2 px-4">
-            <Typography className="text-center mt-3" variant="h3" gutterBottom>
-                Explore Amazing Destinations in India
-            </Typography>
-            <Typography className="text-center mx-9 px-10" variant="body1" paragraph>
-                Discover the rich culture, history, and breathtaking landscapes of India. From the majestic Taj Mahal in Agra to the serene backwaters of Kerala, each city offers a unique experience. Whether you're looking for adventure, relaxation, or a taste of local cuisine, there's something for everyone.
-            </Typography>
-            <Typography  className="text-center mx-9 px-10"  variant="h5" gutterBottom>
-                Plan Your Next Adventure Today!
-            </Typography>
-            <Typography  className="text-center mx-9 px-10"  variant="body1" paragraph>
-                Browse through our collection of top destinations and find your next travel spot. Click on any city card for more details and booking options!
-            </Typography>
 
-            <Grid container spacing={1}>
-                {data.map((city) => (
-                    <Grid item xs={12} sm={6} md={4} key={city.id}>
-                        <Card className="border-solid border-2 border-white-500" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <CardMedia
-                                    component="img"
-                                    alt={city.name}
-                                    style={{ height: 250, objectFit: 'cover' }} 
-                                    image={city.imgee}
-                                />
-                            </Suspense>
-                            <CardContent style={{ flexGrow: 1 }}>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {city.name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {city.des}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    <strong>Attractions:</strong> {city.attractions}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    <strong>Budget:</strong> {city.budget}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small" color="primary">Info</Button>
-                                <Link to={`/singlecity/${city.id}`} style={{ textDecoration: 'none' }}>
+    const [visibleItems, setVisibleItems] = useState(6);
+
+    // Load more items when reaching the bottom of the page
+    const loadMoreItems = () => {
+        setVisibleItems(prevVisibleItems => prevVisibleItems + 6); // Increase by 6 each time
+    };
+
+    // Scroll event listener to detect near bottom
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - 100) {
+                loadMoreItems();
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return (
+        <Grid className="pt-10 px-10" container spacing={3}>
+        {data.slice(0, visibleItems).map((item) => (
+            <Grid  item xs={12} sm={6} md={4} key={item.id}>
+                <Card
+                    sx={{
+                        height: '100%', 
+                        borderRadius: 2,
+                        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
+                        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                        '&:hover': {
+                            transform: 'translateY(-5px)',
+                            boxShadow: '0 12px 24px rgba(0, 0, 0, 0.15)',
+                        },
+                    }}
+                >
+                    <Suspense fallback={<div className="p-4 text-center">Loading image...</div>}>
+                        <CardMedia
+                            component="img"
+                            height="120"
+                            image={item.imgee}
+                            alt={item.name}
+                            sx={{
+                                borderTopLeftRadius: '8px',
+                                borderTopRightRadius: '8px',
+                                objectFit: 'cover', 
+                            }}
+                        />
+                    </Suspense>
+                    <CardContent sx={{ flexGrow: 1 }}>
+                        <Typography variant="h6" component="div" sx={{ fontWeight: 'bold' }}>
+                            {item.name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                            {item.des}
+                        </Typography>
+                    </CardContent>
+                    <CardActions sx={{ justifyContent: 'flex-end' }}>
+                    <Link to={`/singlecity/${item.id}`} style={{ textDecoration: 'none' }}>
                                     <Button onClick={()=>dispatch(addDestination())} size="small" color="secondary">Booking</Button>
                                 </Link>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                ))}
+                    </CardActions>
+                </Card>
             </Grid>
-        </div>
+        ))}
+    </Grid>
+    
     );
-};
+}
 
 export default ViewallCard;
