@@ -2,7 +2,6 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Typography, Grid, Card, CardContent, CardActions, Button ,CardMedia } from '@mui/material';
 import { useDispatch } from "react-redux";
 
-import {setDestinations, addDestination, updateDestination, removeDestination} from "../feature/citySlice/travelSlice.js"
 
 
 import agra from '../media/card/agra.webp';
@@ -41,7 +40,7 @@ import { Link } from "react-router-dom";
 const CardMediaa = lazy(() => import("@mui/material/CardMedia"));
 
 function ViewallCard() {
-    const dispatch = useDispatch();
+
 
     const data = [
         { 
@@ -439,7 +438,7 @@ function ViewallCard() {
                     </CardContent>
                     <CardActions sx={{ justifyContent: 'flex-end' }}>
                     <Link to={`/singlecity/${item.id}`} style={{ textDecoration: 'none' }}>
-                                    <Button onClick={()=>dispatch(addDestination())} size="small" color="secondary">Booking</Button>
+                                    <Button  size="small" color="secondary">Booking</Button>
                                 </Link>
                     </CardActions>
                 </Card>

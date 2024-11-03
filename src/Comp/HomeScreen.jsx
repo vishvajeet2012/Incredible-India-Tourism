@@ -1,13 +1,14 @@
-
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import homeImg from "../media/slider/India Tourism .jpg";
-import styles from "../css/indianpass.module.css"; // Corrected CSS import
+import styles from "../css/indianpass.module.css";
 
 function HomeScreen() {
-  const navi = useNavigate()
-  function viewall () {
-    navi("/viewallcard")
+  const navigate = useNavigate();
+
+  function viewAll() {
+    navigate("/viewallcard");
   }
+
   return (
     <div className={styles.container}>
       {/* Background Image */}
@@ -21,10 +22,8 @@ function HomeScreen() {
             The best Indian attractions and activities, all for one low price.
           </p>
           
-          
-          
-          
-                    <div className={styles.stats}>
+          {/* Stats Section */}
+          <div className={styles.stats}>
             <div className={styles.statItem}>
               <h2 className={styles.statValue}>4.3M</h2>
               <p className={styles.statLabel}>purchases</p>
@@ -40,13 +39,12 @@ function HomeScreen() {
           </div>
 
           {/* Button Section */}
-          <div className={styles.buttonGroup}>
-            {/* <button className={styles.buyNowButton}>Buy now</button> */}
-            <button onClick={viewall} className={styles.viewAttractionsButton}></button>
-          </div>
+          <div className={styles.buttonGroup}> 
+            <button onClick={viewAll} className={styles.viewAttractionsButton}>
+              View All Attractions
+            </button>
+          </div> 
         </div>
-
-        
       </div>
     </div>
   );

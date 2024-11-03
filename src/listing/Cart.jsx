@@ -1,34 +1,69 @@
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addDestination } from '../feature/citySlice/travelSlice.js'; 
+import { AiFillStar } from 'react-icons/ai'; 
 
-function Cart() {
-    const items = [
-        { id: 1, name: 'Item 1', price: 29.99 },
-        { id: 2, name: 'Item 2', price: 19.99 },
-        { id: 3, name: 'Item 3', price: 39.99 },
-    ];
-                                  const useSelectorr = useSelector(state=>state)
-                                  console.log(useSelectorr)
-    const totalPrice = items.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+const Cart = () => {
+  const dispatch = useDispatch();
+  const destinations = useSelector((state) => state.travel.destinations);
+  const totalPrice = useSelector((state) => state.travel.totalPrice);
+  const totalQuantity = useSelector((state) => state.travel.totalQuantity);
 
-    return (
-        <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Shopping Cart</h2>
-            <ul className="space-y-4">
-                {items.map(item => (
-                    <li key={item.id} className="flex justify-between items-center border-b pb-2">
-                        <span>{item.name}</span>
-                        <span>${item.price.toFixed(2)}</span>
-                    </li>
-                ))}
-            </ul>
-            <div className="mt-4 font-semibold text-lg">
-                Total: <span className="text-green-500">${totalPrice}</span>
-            </div>
-            <button className="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
-                Checkout
-            </button>
-        </div>
-    );
-}
+  const handleAddToCart = (destination) => {
+    dispatch(addDestination(destination));
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-8">
+      <h2 className="text-2xl font-semibold text-gray-800 sm:text-3xl">Your Cart</h2>
+      {destinations.length === 0 ? (
+        <p className="text-gray-600 mt-6">Your cart is empty.</p>
+      ) : (
+        <ul className="divide-y divide-gray-200 mt-6 space-y-6">
+          {destinations.map((dest) => (
+            <li key={dest.id} className="flex flex-col md:flex-row items-start md:space-x-6">
+          
+              <img
+                src={dest.imgee}
+                alt={dest.name}
+                className="w-full h-48 md:w-36 md:h-36 rounded-lg object-cover mb-4 md:mb-0"
+              />
+              
+         
+              <div className="flex-1 space-y-2">
+                <h3 className="text-xl font-medium text-gray-900 sm:text-2xl">{dest.name}</h3>
+                <p className="text-sm text-gray-600">{dest.des}</p>
+                <p className="text-sm text-gray-500">Best time to visit: {dest.bestTimeToVisit}</p>
+                
+             
+                <div className="flex items-center">
+                  <AiFillStar className="text-yellow-500" />
+                  <span className="text-sm font-medium text-gray-700 ml-1">{dest.rating}</span>
+                </div>
+
+                <p className="text-sm text-gray-500">Budget: {dest.budget}</p>
+                <p className="text-sm text-gray-500">Travel Tips: {dest.travelTips}</p>
+              </div>
+
+              <div className="flex md:flex-col items-center md:items-start mt-4 md:mt-0">
+                <p className="text-sm text-gray-600 mb-2">Quantity: {dest.quantity}</p>
+                <button
+                  onClick={() => handleAddToCart(dest)}
+                  className="bg-blue-500 text-white py-1 px-4 rounded-lg hover:bg-blue-600 focus:outline-none w-full md:w-auto"
+                >
+                  Add More
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+      <div className="mt-8 border-t pt-6">
+        <p className="text-lg sm:text-xl font-medium text-gray-800">Total Quantity: {totalQuantity}</p>
+        <p className="text-lg sm:text-xl font-medium text-gray-800">Total Price: ₹{totalPrice.toFixed(2)}</p>
+      </div>
+    </div>
+  );
+};
 
 export default Cart;

@@ -283,7 +283,7 @@ function SingleCity(props){
             name: 'Amritsar', 
             des: 'Home to the Golden Temple and rich history.', 
             imgee: amritsar, 
-            attractions: "Golden Temple, Jallianwala Bagh, Wagah Border", 
+            attractions: "Go    lden Temple, Jallianwala Bagh, Wagah Border", 
             budget: "₹4,500",
             rating: 4.7, // Rating
             travelTips: "Don't miss the evening Wagah Border ceremony.", // Travel Tips
@@ -419,6 +419,7 @@ console.warn(dispatch)
        
         <div
         style={{
+            zIndex: '-1',
           width: '100%',
           height: '100vh',
           display: 'flex',
@@ -460,7 +461,7 @@ console.warn(dispatch)
             }}
           >
             <button
-    onClick={()=> dispatch(addDestination()) }
+    onClick={()=> dispatch(addDestination(city)) }
 
               style={{
                 fontSize: '14px',
