@@ -1,8 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addDestination } from '../feature/citySlice/travelSlice.js'; 
-import { AiFillStar } from 'react-icons/ai'; 
-
+import { addDestination ,deleteDestination} from '../feature/citySlice/travelSlice.js'; 
+import { Rating } from '@mui/material'; 
 const Cart = () => {
   const dispatch = useDispatch();
   const destinations = useSelector((state) => state.travel.destinations);
@@ -12,7 +11,9 @@ const Cart = () => {
   const handleAddToCart = (destination) => {
     dispatch(addDestination(destination));
   };
-
+const handleDeleteToCart  = (destinations) =>{
+  dispatch(deleteDestination(destinations))
+}
   return (
     <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-8">
       <h2 className="text-2xl font-semibold text-gray-800 sm:text-3xl">Your Cart</h2>
@@ -34,14 +35,17 @@ const Cart = () => {
                 <h3 className="text-xl font-medium text-gray-900 sm:text-2xl">{dest.name}</h3>
                 <p className="text-sm text-gray-600">{dest.des}</p>
                 <p className="text-sm text-gray-500">Best time to visit: {dest.bestTimeToVisit}</p>
-                
-             
-                <div className="flex items-center">
-                  <AiFillStar className="text-yellow-500" />
-                  <span className="text-sm font-medium text-gray-700 ml-1">{dest.rating}</span>
-                </div>
+                <div className='flex items-center justify-around mb-2'>
+  <Rating
+    name="half-rating"
+    defaultValue={dest.rating}
+    precision={0.5}
+    readOnly />
+  <span className="text-sm font-bold text-gray-700 ml-2">{dest.rating}</span>
+</div>
 
-                <p className="text-sm text-gray-500">Budget: {dest.budget}</p>
+
+                <p className="text-sm font-mmedium text-gray-500">Budget: {dest.budget}</p>
                 <p className="text-sm text-gray-500">Travel Tips: {dest.travelTips}</p>
               </div>
 
@@ -53,6 +57,12 @@ const Cart = () => {
                 >
                   Add More
                 </button>
+                <button
+                  onClick={() => handleDeleteToCart(dest)}
+                  className="bg-red-500 text-white mx-2 mt-2 py-2 px-4 rounded-lg hover:bg-red-600 focus:outline-none w-full md:w-auto"
+                >
+             Delete
+                </button>
               </div>
             </li>
           ))}
@@ -61,7 +71,9 @@ const Cart = () => {
       <div className="mt-8 border-t pt-6">
         <p className="text-lg sm:text-xl font-medium text-gray-800">Total Quantity: {totalQuantity}</p>
         <p className="text-lg sm:text-xl font-medium text-gray-800">Total Price: ₹{totalPrice.toFixed(2)}</p>
+
       </div>
+
     </div>
   );
 };

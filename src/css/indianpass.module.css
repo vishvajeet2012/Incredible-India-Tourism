@@ -131,6 +131,7 @@ color: white;
 
 .viewAttractionsButton {
   position: relative;
+  cursor: cell;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,14 +173,15 @@ color: white;
 }
 
 .viewAttractionsButton:after {
-  content: "View all attractions";
+  content: "Buy Now";
+  cursor: pointer;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 170px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.274);
+  background: rgba(75, 75, 75, 0.704);
   backdrop-filter: blur(35px);
   -webkit-backdrop-filter: blur(35px);
   color: #fff;
@@ -234,7 +236,7 @@ color: white;
   
 
   .overlay {
-padding: 20px 15px 0px 15px;
+padding: 20px 15px 30px 15px;
       border-radius:0px 0px 0px 0px;
   
   }

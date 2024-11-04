@@ -72,7 +72,7 @@ function ViewallCard() {
             imgee: jodhpur, 
             attractions: "Mehrangarh Fort, Umaid Bhawan Palace, Jaswant Thada", 
             budget: "₹4,700",
-            rating: 4.4, // Rating
+            rating: 2.4, // Rating
             travelTips: "Try local street food at the Clock Tower area.", // Travel Tips
             bestTimeToVisit: "October to March" // Best Time to Visit
         },

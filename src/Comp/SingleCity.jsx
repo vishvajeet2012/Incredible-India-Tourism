@@ -65,7 +65,7 @@ function SingleCity(props){
             imgee: jaipur, 
             attractions: "Hawa Mahal, Amber Fort, City Palace", 
             budget: "₹4,800",
-            rating: 4.6, // Rating
+            rating: 3.6, // Rating
             travelTips: "Dress modestly when visiting temples.", // Travel Tips
             bestTimeToVisit: "October to March" // Best Time to Visit
         },
@@ -76,7 +76,7 @@ function SingleCity(props){
             imgee: jodhpur, 
             attractions: "Mehrangarh Fort, Umaid Bhawan Palace, Jaswant Thada", 
             budget: "₹4,700",
-            rating: 4.4, // Rating
+            rating: 2.4, // Rating
             travelTips: "Try local street food at the Clock Tower area.", // Travel Tips
             bestTimeToVisit: "October to March" // Best Time to Visit
         },

@@ -41,7 +41,7 @@ function HomeScreen() {
           {/* Button Section */}
           <div className={styles.buttonGroup}> 
             <button onClick={viewAll} className={styles.viewAttractionsButton}>
-              View All Attractions
+            
             </button>
           </div> 
         </div>
