@@ -7,7 +7,7 @@ const Footer = () => {
         
 
         <div>
-          <h2 className="text-2xl font-bold mb-4">TravelSite</h2>
+          <h2 className="text-2xl font-bold mb-4">Indian Tourism</h2>
           <p className="text-sm">
             Explore the beauty of the world with our handpicked destinations. Your journey begins here!
           </p>
@@ -45,8 +45,13 @@ const Footer = () => {
       </div>
 
       {/* Bottom Note */}
+      <div className='flex justify-center'>
+      <div className="text-center mt-8 text-gray-400 text-sm">
+            Designed with ❤️ by Vishu
+      </div>
       <div className="text-center mt-8 text-gray-400 text-sm">
         © {new Date().getFullYear()} India Tourism. All rights reserved.
+      </div>
       </div>
     </footer>
   );

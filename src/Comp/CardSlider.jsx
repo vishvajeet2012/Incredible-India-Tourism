@@ -18,49 +18,93 @@ import goaa from '../media/card/goa.jpg';
 
 import styless from '../css/MyComponent.module.css';
 
-const settings = {
-    dots: false,
-    infinite: true,
-    
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 3,
-    responsive: [
-        { breakpoint: 1440, settings: { slidesToShow: 5, slidesToScroll: 2 } },
-        { breakpoint: 1024, settings: { slidesToShow: 4, slidesToScroll: 2 } },
-        { breakpoint: 768, settings: { slidesToShow: 3, slidesToScroll: 1 } },
-        { breakpoint: 600, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-        { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-    ]
-};
-
 const CardSlider = () => {
     const data = [
-        { name: "Agra", des: "lorembhai keso", imgee: agra },
-        { name: 'Jaipur', des: "lorem bhai jaipur", imgee: jaipur },
-        { name: 'Jodhpur', des: 'lorem bhai jodhpur', imgee: jodhpur },
-        { name: 'Udaipur', des: 'lorem bhai udaipur', imgee: udaipur },
-        { name: 'Gujrat', des: 'lorem bhai gujrat', imgee: gujrat },
-        { name: 'Ujjain', des: 'lorem bhai ujjain', imgee: ujjain },
-        { name: 'Ladakh', des: 'lorem bhai ladakh', imgee: ladhak },
-        { name: 'Varanasi', des: 'lorem bhai varanasi', imgee: varasi },
-        { name: 'Assam', des: 'vishu bhai assam', imgee: assam },
-        { name: 'Shimla', des: 'vishu bhai shimla', imgee: shimla },
-        { name: 'Kerala', des: 'vishu bhai kerala', imgee: kerala },
-        { name: 'Goa', des: 'vishu bhai goa', imgee: goaa }
+        { 
+            name: "Agra", 
+            des: "Home to the iconic Taj Mahal, Agra is a city that showcases Mughal architecture and history.", 
+            imgee: agra 
+        },
+        { 
+            name: 'Jaipur', 
+            des: "Known as the Pink City, Jaipur is famous for its royal palaces, historic forts, and vibrant bazaars.", 
+            imgee: jaipur 
+        },
+        { 
+            name: 'Jodhpur', 
+            des: 'Jodhpur, the Blue City, is renowned for its Mehrangarh Fort and picturesque blue-painted houses.', 
+            imgee: jodhpur 
+        },
+        { 
+            name: 'Udaipur', 
+            des: 'Often called the City of Lakes, Udaipur boasts serene lakes and majestic palaces.', 
+            imgee: udaipur 
+        },
+        { 
+            name: 'Gujrat', 
+            des: 'Gujarat offers a mix of cultural heritage, temples, and the famous Gir National Park.', 
+            imgee: gujrat 
+        },
+        { 
+            name: 'Ujjain', 
+            des: 'A spiritual hub, Ujjain is known for the Mahakaleshwar Temple and the Kumbh Mela.', 
+            imgee: ujjain 
+        },
+        { 
+            name: 'Ladakh', 
+            des: 'A paradise for adventurers, Ladakh is famous for its stunning landscapes and monasteries.', 
+            imgee: ladhak 
+        },
+        { 
+            name: 'Varanasi', 
+            des: 'One of the oldest cities in the world, Varanasi is a spiritual center with Ganga ghats and temples.', 
+            imgee: varasi 
+        },
+        { 
+            name: 'Assam', 
+            des: 'Known for its tea gardens and the Kaziranga National Park, Assam is a land of natural beauty.', 
+            imgee: assam 
+        },
+        { 
+            name: 'Shimla', 
+            des: 'The Queen of Hills, Shimla is a popular hill station with colonial architecture and scenic views.', 
+            imgee: shimla 
+        },
+        { 
+            name: 'Kerala', 
+            des: 'God’s Own Country, Kerala is famous for its backwaters, beaches, and lush greenery.', 
+            imgee: kerala 
+        },
+        { 
+            name: 'Goa', 
+            des: 'Known for its beaches, vibrant nightlife, and Portuguese heritage, Goa is a tourist hotspot.', 
+            imgee: goaa 
+        }
     ];
 
     return (
-        <Slider {...settings}>
-            {data.map((value, index) => (
-                <div className={styless.wind} key={index}>
-                    <img className={styless.slideImg} src={value.imgee} alt={value.name} width="350" height="200" />
-                    <h4 className={styless.cardsliderText}>{value.name}</h4>
-                    <p className={styless.cardSliderDes}>{value.des}</p>
-                </div>
-            ))}
-        </Slider>
-    );
+        <div className="p-5 gap-6 flex items-center justify-start flex-nowrap py-5 w-full mt-5 overflow-x-auto hide-scrollbar">
+        {data.map((value, index) => (
+          <div
+            className="bg-white shadow-md rounded-lg overflow-hidden w-60 sm:w-80 flex-shrink-0 transform hover:scale-105 transition-transform duration-400"
+            key={index}
+          >
+            <img
+              className="w-full h-40 sm:h-48 object-cover"
+              src={value.imgee}
+              alt={value.name}
+            />
+            <div className="p-4">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 text-center">
+                {value.name}
+              </h4>
+              <p className="text-gray-600 text-sm sm:text-base text-center">{value.des}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+  );
 };
 
 export default CardSlider;
