@@ -49,7 +49,9 @@ const Home = () => {
               width: "100%",
               height: "50vh",
               overflow: "hidden",
-        
+              "@media (max-width:600px)": {
+      height: "80vh", 
+    },
             
             }}
           >
