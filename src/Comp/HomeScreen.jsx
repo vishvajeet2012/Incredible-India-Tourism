@@ -11,10 +11,10 @@ function HomeScreen() {
 
   return (
     <div className={styles.container}>
-      {/* Background Image */}
+  
       <img src={homeImg} alt="India Tourism Background" className={styles.backgroundImage} />
 
-      {/* Overlay Content */}
+    
       <div className={styles.overlay}>
         <div className={styles.textContainer}>
           <h1 className={styles.mainTitle}>The India Pass® | Save big on all your must-sees</h1>
@@ -22,7 +22,7 @@ function HomeScreen() {
             The best Indian attractions and activities, all for one low price.
           </p>
           
-          {/* Stats Section */}
+  
           <div className={styles.stats}>
             <div className={styles.statItem}>
               <h2 className={styles.statValue}>4.3M</h2>
@@ -38,7 +38,7 @@ function HomeScreen() {
             </div>
           </div>
 
-          {/* Button Section */}
+
           <div className={styles.buttonGroup}> 
             <button onClick={viewAll} className={styles.viewAttractionsButton}>
             

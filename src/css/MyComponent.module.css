@@ -151,10 +151,14 @@ margin: 15px 0px;
       .ChooseiNdia{
         padding: 0px 0px;
       }
-   
+   .paraji{
+    padding: 0px;
+    margin-top: 15px;
+   }
 .flexinfo{
- display: inline;
+ display: block;
  margin: 0px;
+
   flex-wrap:wrap;
   font-size: medium;
   flex-direction: column;

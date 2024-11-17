@@ -66,20 +66,20 @@ const Home = () => {
               >
                 <div className={styless.fex}>
                   <DoneIcon />
-                  <p>
+                  <p className={styless.paraji}>
                     The India Pass® is a credit-based package, giving you a set
                     number of credits to use over the number of days you select.
                   </p>
                 </div>
                 <div className={styless.fex}>
                   <DoneIcon />
-                  <p>
+                  <p className={styless.paraji}>
                     It's easy to scan in at attractions to redeem your credits.
                   </p>
                 </div>
                 <div className={styless.fex}>
                   <DoneIcon />
-                  <p>
+                  <p className={styless.paraji}>
                     Enjoy savings of up to 50% on all your sightseeing vs.
                     buying individual attraction tickets.
                   </p>
@@ -100,17 +100,17 @@ const Home = () => {
       <hr />
 
       <Box sx={{ width: "97%", bgcolor: "white" }}>
-      <div>
+      <div className="mt-7 ">
         <h3 className={styless.headingg}>Access 90+ Indian attractions</h3>
         <h2 className={styless.headingg}>
           "From the Ganges to ancient forts, discover India's wonders with us..."
         </h2>
 </div>
-        {/* Lazy-loaded CardSlider */}
+      
         <Suspense fallback={<div>Loading Card Slider...</div>}>
         <div className="px-4">
           <CardSlider />  
-          </div>                 {/*      CardSlider use here */}
+          </div>         
         </Suspense>
 
         <Box

@@ -33,10 +33,11 @@ export const travelSlice = createSlice({
       );
     },
     totalCart: (state) => {
-    
+      console.log( state.destinations);
       const totals = state.destinations.reduce(
         (cartTotal, cartItem) => {
           const { price, quantity } = cartItem;
+            console.log(cartItem)
           const itemTotal = parseInt(price) * parseInt(quantity);
           cartTotal.totalPrice += itemTotal;
           cartTotal.totalQuantity += quantity;
