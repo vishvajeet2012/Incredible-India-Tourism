@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import * as React from 'react';
-import {setDestinations, addDestination, updateDestination, removeDestination} from "../feature/citySlice/travelSlice.js"
+import {addDestination, } from "../feature/citySlice/travelSlice.js"
 
 import agra from '../media/card/agra.webp';
 import jaipur from '../media/card/jaipur.jpg';
@@ -33,8 +33,7 @@ import coorg from '../media/card/coorg.jpg';
 import ranthambore from '../media/card/ranthambore.jpg';
 import darjeeling from '../media/card/darjeeling.jpg';
 import { useEffect, useState } from "react";
-import { shouldSkipGeneratingVar } from "@mui/material";
-import { red } from "@mui/material/colors";
+
 import { useDispatch } from "react-redux";
 
 

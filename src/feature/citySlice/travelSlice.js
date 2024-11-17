@@ -33,7 +33,7 @@ export const travelSlice = createSlice({
       );
     },
     totalCart: (state) => {
-      console.log( state.destinations);
+      console.warn( state.destinations);
       const totals = state.destinations.reduce(
         (cartTotal, cartItem) => {
           const { price, quantity } = cartItem;
