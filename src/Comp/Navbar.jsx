@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styles from "../css/Navbar.module.css";
+import { useSelector } from 'react-redux';
 
 const pages = [
   { name: 'Home', link: '/' },
@@ -13,6 +14,8 @@ const pages = [
 ];
 
 function Navbar() {
+
+  const destinations = useSelector((state) => state.travel.destinations);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Assuming you have access to total cart quantity
@@ -32,7 +35,7 @@ function Navbar() {
         <div className={`${styles['nav-links']} ${mobileMenuOpen ? styles.active : ''}`}>
           <div className={styles.shopingbox2}>
             <Link to="/cart">
-              <Badge badgeContent={totalQuantity} color="secondary" overlap="rectangular">
+              <Badge badgeContent={destinations.length} color="secondary" overlap="rectangular">
                 <ShoppingCartIcon />
               </Badge>
             </Link>
@@ -50,7 +53,7 @@ function Navbar() {
         </div>
         <div className={styles.shopingbox}>
           <Link to="/cart">
-            <Badge badgeContent={totalQuantity} color="secondary" overlap="rectangular">
+            <Badge badgeContent={destinations.length} color="secondary" overlap="rectangular">
               <ShoppingCartIcon />
             </Badge>
           </Link>
