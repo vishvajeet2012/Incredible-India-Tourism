@@ -8,7 +8,7 @@ const Footer = () => {
         
 
         <div>
-          <h2 className="text-2xl font-bold mb-4">Indian Tourism</h2>
+          <h2 className="text-2xl text-center font-bold mb-2">Indian Tourism</h2>
           <p className="text-sm">
             Explore the beauty of the world with our handpicked destinations. Your journey begins here!
           </p>
