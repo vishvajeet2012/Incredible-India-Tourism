@@ -49,9 +49,9 @@ const Footer = () => {
       <div className="text-center mt-8 text-gray-400 text-sm">
             Designed with ❤️ by Vishu
       </div>
-      <div className="text-center mt-8 text-gray-400 text-sm">
+      {/* <div className="text-center mt-8 text-gray-400 text-sm">
         © {new Date().getFullYear()} India Tourism. All rights reserved.
-      </div>
+      </div> */}
       </div>
     </footer>
   );
